@@ -1,3 +1,14 @@
+# ls color by default
+# https://superuser.com/questions/665274/how-to-make-ls-color-its-output-by-default-without-setting-up-an-alias
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+
+## Use a long listing format ##
+alias ll='ls -la'
+
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
 run_last() {
   if [[ -z "$1" || "$1" -le 0 ]]; then
     echo "Usage: run_last_x <number>"
