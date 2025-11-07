@@ -1,3 +1,5 @@
+export HISTIGNORE="run_last*"
+
 # install fzf with 
 # sudo apt install fzf
 # keybindings activated with
