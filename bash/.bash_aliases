@@ -11,16 +11,29 @@ alias l.='ls -d .* --color=auto'
 
 run_last() {
   if [[ -z "$1" || "$1" -le 0 ]]; then
-    echo "Usage: run_last_x <number>"
+    echo "Usage: run_last <number>"
     return 1
   fi
 
   local count=$1
-  local i
-  for ((i=count; i>=1; i--)); do
-    local cmd=$(history | tail -n "$((i+1))" | head -n 1 | sed 's/^[ ]*[0-9]\+[ ]*//')
-    echo "Running: $cmd"
-    eval "$cmd"
+  local self_name="run_last"
+  local histfile="${HISTFILE:-$HOME/.bash_history}"
+
+  # Read from the history file, reverse it, filter out self, and get the last N
+  local cmds=()
+  while IFS= read -r line; do
+    if [[ "$line" != *"$self_name"* ]]; then
+      cmds+=("$line")
+    fi
+    if [[ ${#cmds[@]} -ge $count ]]; then
+      break
+    fi
+  done < <(tac "$histfile")
+
+  # Reverse the array to run in original order
+  for ((i=${#cmds[@]}-1; i>=0; i--)); do
+    echo "Running: ${cmds[i]}"
+    eval "${cmds[i]}"
   done
 }
 
