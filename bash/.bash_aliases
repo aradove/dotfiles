@@ -9,6 +9,9 @@ alias ll='ls -la'
 ## Show hidden files ##
 alias l.='ls -d .* --color=auto'
 
+# https://stackoverflow.com/questions/9969414/always-include-first-line-in-grep
+grep1() { awk -v pattern="${1:?pattern is empty}" 'NR==1 || $0~pattern' "${2:-/dev/stdin}"; }
+
 run_last() {
   if [[ -z "$1" || "$1" -le 0 ]]; then
     echo "Usage: run_last <number>"
