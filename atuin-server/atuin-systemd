@@ -1,4 +1,4 @@
-# to use:
+# Update User first, then copy it to the correct location.
 # sudo cp atuin-systemd /etc/systemd/system/atuin.service
 [Unit]
 Description=Docker Compose Atuin Service
