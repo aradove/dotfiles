@@ -1,3 +1,7 @@
+# Install
+For the client, check the github release page and use the same version as the server uses, as defined in `docker-compose.yml`. 
+Do not use the latest shell script install which you can pipe. 
+
 # Configuration
 - Update the user in the systemd file, so it can correctly point to these files from systemd.
 - Copy the systemd file as noted in that file.
