@@ -1,0 +1,174 @@
+# atuin related
+atuin-server/config/*
+atuin-server/database/*
+
+# -----------------------------
+# .env and generic secret files
+# -----------------------------
+.env
+.env.*
+!.env.example
+*.env
+*.secret
+*.secrets
+*.secrets.*
+*.vault
+*.credentials
+*.creds
+*.token
+*.tokens
+*.pass
+*.password
+*.apikey
+*.api_key
+*.jwt
+*.jwt.*
+*.auth
+*.auth.*
+*.sas
+*.dsn
+
+# -----------------------------------------
+# Private keys, certificates, keystores
+# (Public certs are often fine, but we err
+# on the side of caution here.)
+# -----------------------------------------
+*.pem
+*.key
+*.keys
+*.der
+*.p12
+*.pfx
+*.pkcs12
+*.jks
+*.keystore
+*.bks
+*.asc         # may include PGP private parts if exported
+*.gpg
+*.kbx
+secring.*
+private-keys-v1.d/
+*.age
+age.key
+
+# SSH (ignore private keys, allow public)
+.ssh/
+!.ssh/*.pub
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+id_rsa.*
+id_dsa.*
+id_ecdsa.*
+id_ed25519.*
+
+# -----------------
+# Git credentials
+# -----------------
+.git-credentials
+.gitconfig.work       # sometimes used for per-user tokens
+.gitconfig.local
+*.netrc
+
+# -----------------------
+# Cloud provider profiles
+# -----------------------
+.aws/
+.azure/
+.gcloud/
+.boto
+.boto.cfg
+.terraformrc
+terraform.rc
+
+# Terraform state/vars (contain secrets)
+*.tfvars
+*.tfvars.json
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+.terraform/
+.terraform.lock.hcl
+
+# -------------------
+# Container/Kubernetes
+# -------------------
+.docker/config.json
+.dockercfg
+.kube/config
+*.kubeconfig
+
+# -------------------
+# Package managers / registries (often contain tokens)
+# -------------------
+.npmrc
+.yarnrc
+.yarnrc.yml
+.pnpmrc
+.pypirc
+pippip.conf
+.gem/credentials
+.bundle/config
+composer.auth.json
+
+# -------------------
+# Databases & clients
+# -------------------
+*.pgpass
+*.mylogin.cnf
+*.my.cnf
+*.cnf
+
+# -------------------
+# Mobile / platform configs
+# -------------------
+google-services.json            # Android Firebase (contains API keys)
+GoogleService-Info.plist        # iOS Firebase
+*.mobileprovision
+*.provisionprofile
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output
+fastlane/readme.md
+
+# -------------------
+# VPNs and secure links
+# -------------------
+*.ovpn
+*.vpn
+*.pw
+
+# -------------------
+# Vault / Secrets tools
+# -------------------
+.vault-token
+*.seal
+.sops.yaml
+*.sops.*
+*.agekey
+.age/keys.txt
+
+# -------------------
+# Misc sensitive patterns
+# -------------------
+*.pem.enc
+*.key.enc
+*.p12.enc
+*.pfx.enc
+*.bak
+*.backup
+*~                       # editor temp backups sometimes hold secrets
+.DS_Store                # hygiene, not secrets—but commonly ignored
+Thumbs.db
+
+# --------------------------------
+# App-specific common secret paths
+# (comment out if you intentionally
+# keep sanitized configs)
+# --------------------------------
+config/secrets.yml
+config/credentials.yml.enc
+secrets.yml
+credentials.yml
