@@ -1,5 +1,6 @@
 # Configuration
 - Copy the systemd file as noted in that file.
+- Update the user in the systemd file, so it can correctly point to these files from systemd.
 - Modify .env.template to what you want to set.
 
 ## Configure ~/.config/atuin/config.toml
