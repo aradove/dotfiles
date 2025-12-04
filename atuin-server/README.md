@@ -14,6 +14,8 @@ sync_address = "http://192.168.1.x:51234"
 auto_sync = true
 sync_frequency = "0m"
 enter_accept = false
+style = "compact"
+inline_height = 15
 ```
 
 # start
