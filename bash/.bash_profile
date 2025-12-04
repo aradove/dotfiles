@@ -10,6 +10,18 @@ elif command -v fzf >/dev/null 2>&1; then
     eval "$(fzf --bash)"
 fi
 
+# atuin
+# need bash-preexec to get sync to work after each command
+# curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash-preexec.sh
+if [ -f "${HOME}/dotfiles/atuin-server/.env" ]; then
+    source "${HOME}/dotfiles/atuin-server/.env"
+fi
+if [ -f "${HOME}/.atuin/bin/env" ]; then
+    source "${HOME}/.atuin/bin/env"
+    [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+    eval "$(atuin init bash)"
+    echo "Loaded atuin!"
+fi
 
 if [ -f  /usr/share/autojump/autojump.sh ]; then
     . /usr/share/autojump/autojump.sh
