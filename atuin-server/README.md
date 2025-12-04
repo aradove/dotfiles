@@ -19,7 +19,7 @@ sudo systemctl daemon-reload
 sudo systemctl start atuin
 ```
 
-# Check that configuration is correct:
+# Check that configuration is correct
 ```
 atuin info
 # see if your config is correctly pointing to your server
