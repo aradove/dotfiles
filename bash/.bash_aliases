@@ -41,6 +41,7 @@ run_last() {
 }
 
 # Aliases
+alias dockerlint='docker run --rm -i ghcr.io/hadolint/hadolint <'
 alias rl='run_last'
 alias cat='bat --paging=never'
 alias findpkg='apt-cache search'
