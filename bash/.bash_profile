@@ -127,4 +127,4 @@ HISTFILESIZE=2000000
 # if needed, used with signed commits, i.e. needed for gpg with git
 export GPG_TTY=$(tty)
 
-# xmodmap -e 'keycode 65 = space'
+UV_EXCLUDE_NEWER="7d"
