@@ -39,6 +39,14 @@ if [ -f "$HOME/.cargo/env" ]; then
     . "$HOME/.cargo/env"
 fi
 
+ for go
+if [ -d "$HOME/go/bin/" ]; then
+    export PATH="$PATH:$(go env GOPATH)/bin"
+    if [ -f "$HOME/go/bin/cs" ]; then
+        alias cs='cs --color=always'
+    fi
+fi
+
 #####################################################
 #                  Custom promt
 #####################################################
